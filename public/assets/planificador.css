@@ -73,18 +73,6 @@ select {
       }
 }
 
-.form {
-    position: relative;
-    z-index: 1;
-    background: #4CAF50;
-    max-width: 360px;
-    margin: 0 auto 100px;
-    margin-top: 30px;
-    padding: 45px;
-    text-align: center;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-  }
-
 .button{
     position: relative;
     margin-top: 20px;
@@ -101,13 +89,18 @@ select {
     }
 }
 
+.trhead {
+    background: rgba(242, 244, 203, 0.5);
+}
+
 .gradient-custom {
-    /* fallback for old browsers */
-    background: #6a11cb;
+    /* fallback for old browsers   transparent !important  #6a11cb;*/
+    background: rgba(181, 181, 181, 0.8) ; /*rgba(181, 181, 181, 0.5)*/
   
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 0.9), rgba(37, 117, 252, 0.9));
+    /* Chrome 10-25, Safari 5.1-6 
+    background: -webkit-linear-gradient(to right, rgba(105, 114, 104, 0.9), rgba(181, 181, 181, 0.9));
   
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: linear-gradient(to right, rgba(106, 17, 203, 0.9), rgba(37, 117, 252, 0.9));
-  }
+     W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ 
+    background: linear-gradient(to right, rgba(105, 114, 104, 0.9), rgba(181, 181, 181, 0.9));
+    */
+}
