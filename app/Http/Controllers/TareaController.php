@@ -156,4 +156,47 @@ class TareaController extends Controller
 
         return redirect()->route('mecanico');
     }
+
+    public function desabilitarVehiculo(Request $request){
+
+        $id_tarea = $request -> id_tarea;
+        $tarea = Tarea::where('id_tarea',$id_tarea)->get();
+        $codigo = Tarea::where('id_tarea',$id_tarea)->get('codigo_vehiculo_mc');
+        $codigo_vehiculo = $codigo[0]->codigo_vehiculo_mc;
+
+        $fecha_termino = date('Y-m-d H:i:s', strtotime('now'));
+        //Fecha termino con la fecha actual
+        Tarea::updateOrInsert([
+            'id_tarea' =>$id_tarea
+        ],[
+            'comentario' => $request -> comentario,
+            'fecha_termino' => $fecha_termino,
+            'estado_tarea' => 'Finalizada'
+        ]); 
+
+        Solicitud::updateOrInsert([
+            'id_solicitud' =>$tarea[0]->id_solicitud
+        ],[
+            'estado_solicitud' => 'Finalizado'
+        ]); 
+        
+        Vehiculo::updateOrInsert([
+            'codigo' =>$codigo_vehiculo
+        ],[
+            'estado' => 'No operativo'
+        ]);
+
+        $historial_l = new Historial_local;
+        $historial_l -> cod_vehiculo = $codigo_vehiculo;
+        $historial_l -> gravedad = $tarea[0]->gravedad;
+        $historial_l -> fecha_finalizacion = $fecha_termino;
+        $historial_l -> detalle_tarea = $tarea[0] -> detalle_tarea;
+        $historial_l -> comentario_tarea = $request -> comentario;
+        $historial_l -> id_tarea = $id_tarea;
+
+        $historial_l->save();
+
+        return redirect()->route('mecanico');
+    }
+
 }

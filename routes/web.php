@@ -70,6 +70,7 @@ Route::get('vehiculo/historial/{item}',[HistorialLocalController::class,'listarH
 Route::get('mecanico',[TareaController::class,'listarTareas'])->name('mecanico')->middleware('auth');
 Route::post('mecanico/tarea/iniciar',[TareaController::class, 'iniciarProceso'])->name('mecanico.iniciar')->middleware('auth');
 Route::post('mecanico/tarea/finalizar',[TareaController::class, 'finalizarProceso'])->name('mecanico.finalizar')->middleware('auth');
+Route::post('mecanico/tarea/desabilitar',[TareaController::class, 'desabilitarVehiculo'])->name('mecanico.desabilitar')->middleware('auth');
 
 //Supervisor
 

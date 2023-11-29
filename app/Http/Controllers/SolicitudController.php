@@ -8,6 +8,7 @@ use App\Models\Solicitud;
 use App\Models\Trabajador;
 use App\Models\CheckList;
 use App\Models\Vehiculo;
+use App\Models\Ruta;
 
 class SolicitudController extends Controller
 {
@@ -27,23 +28,6 @@ class SolicitudController extends Controller
         ->with('Derivados',$Derivados)
         ->with('Finalizados',$Finalizados);
     }
-
-    //public function listarSolicitudesJSON(Request $request){
-
-    //    $Pendientes=Solicitud::where('estado_solicitud', '=', 'Pendiente')->get();
-    //    header('Content-type: application/json');
-    //    echo json_encode($Pendientes);
-        /*
-        $Asignados=Solicitud::where('estado_solicitud', '=', 'Asignado')->get();
-        $Derivados=Solicitud::where('estado_solicitud', '=', 'Derivado')->get();
-        $Finalizados=Solicitud::where('estado_solicitud', '=', 'Finalizado')->get();
-        return view('planificador')
-        ->with('Pendientes',$Pendientes)
-        ->with('Asignados',$Asignados)
-        ->with('Derivados',$Derivados)
-        ->with('Finalizados',$Finalizados);
-        */
-    //}
     
     public function create ($item) {
         $id_trabajador = session('id_trabajador');
@@ -69,6 +53,7 @@ class SolicitudController extends Controller
     public function store (Request $request) {
 
         $id_check_list = $request -> id_check_list;
+        $ruta = Ruta::where('codigo_vehiculo','=',$request->codigo_vehiculo)->orderByDesc('fecha_creacion')->get('id_ruta')->first();
 
         $solicitud = new Solicitud();
         $solicitud -> faena = $request -> faena;
@@ -82,6 +67,13 @@ class SolicitudController extends Controller
             ['id_check_list' => $id_check_list],
             [
                 'estado_check_list' => 'Rechazado'
+            ]);
+        
+        Ruta::updateOrInsert(
+            ['id_ruta' => $ruta -> id_ruta],
+            [
+                'id_check_list' => $id_check_list,
+                'estado_ruta' => 'Cancelado'
             ]);
         
         $solicitud -> save();

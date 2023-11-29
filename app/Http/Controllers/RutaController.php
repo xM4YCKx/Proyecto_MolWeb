@@ -135,8 +135,6 @@ class RutaController extends Controller
         $faena = $f[0] -> faena;
         $fecha_termino = date('Y-m-d H:i:s', strtotime('now'));
         $ruta = Ruta::where('id_conductor',$id_trabajador)->orderByDesc('fecha_creacion')->get()->first();
-        $tipo_vehiculo = TipoVehiculo::all();
-        $codigo_vehiculo = Vehiculo::where('estado','Operativo')->where('faena_asignada',$faena)->get('codigo');
         $cod_vehiculo = Ruta::where('id_conductor',$id_trabajador)->get('codigo_vehiculo');
         $codigo = $cod_vehiculo[0] -> codigo_vehiculo;
         $id_ruta = $ruta -> id_ruta;

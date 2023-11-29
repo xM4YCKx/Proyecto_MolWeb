@@ -45,10 +45,10 @@
     <div class="container">
         <div class="card" >
             <div class="card-header">
-                <h4>Informacion de la ruta</h4>
+                <h4>Informacion:</h4>
             </div>
             <div class="card-body">
-                <h6>La ruta de hoy fue finalizada con exito</h6>
+                <h6>No existen vehiculos disponibles</h6>
             </div>
         </div>
     </div>

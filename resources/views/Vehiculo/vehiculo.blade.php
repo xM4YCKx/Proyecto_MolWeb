@@ -145,6 +145,8 @@
                                                 <td style="background-color: rgba(242, 244, 203, 0.5)">{{$item->fecha_rt_gases}}</td>
                                                 <td style="background-color: rgba(242, 244, 203, 0.5)">{{$item->fecha_permiso_circulacion_seguro}}</td>
                                                 <td style="background-color: rgba(242, 244, 203, 0.5)">
+                                                    <a href="{{route('vehiculo.historial_local', $item->codigo)}}" type="button" class="btn btn-sm text-white" style="background-color: rgb(31, 58, 215) ">Historial</a>
+                                                </td>
                                             </tr>  
 
                                             @include('Vehiculo/ModalVerVehiculo')
@@ -184,6 +186,8 @@
                                                 <td style="background-color: rgba(242, 244, 203, 0.5)">{{$item->fecha_rt_gases}}</td>
                                                 <td style="background-color: rgba(242, 244, 203, 0.5)">{{$item->fecha_permiso_circulacion_seguro}}</td>
                                                 <td style="background-color: rgba(242, 244, 203, 0.5)">
+                                                    <a href="{{route('vehiculo.historial_local', $item->codigo)}}" type="button" class="btn btn-sm text-white" style="background-color: rgb(31, 58, 215) ">Historial</a>
+                                                </td>
                                             </tr>  
 
                                             @include('Vehiculo/ModalVerVehiculo') 
@@ -223,6 +227,8 @@
                                                 <td style="background-color: rgba(242, 244, 203, 0.5)">{{$item->fecha_rt_gases}}</td>
                                                 <td style="background-color: rgba(242, 244, 203, 0.5)">{{$item->fecha_permiso_circulacion_seguro}}</td>
                                                 <td style="background-color: rgba(242, 244, 203, 0.5)">
+                                                    <a href="{{route('vehiculo.historial_local', $item->codigo)}}" type="button" class="btn btn-sm text-white" style="background-color: rgb(31, 58, 215) ">Historial</a>
+                                                </td>
                                             </tr>  
         
                                             @include('Vehiculo/ModalVerVehiculo')
@@ -262,6 +268,8 @@
                                                 <td style="background-color: rgba(242, 244, 203, 0.5)">{{$item->fecha_rt_gases}}</td>
                                                 <td style="background-color: rgba(242, 244, 203, 0.5)">{{$item->fecha_permiso_circulacion_seguro}}</td>
                                                 <td style="background-color: rgba(242, 244, 203, 0.5)">
+                                                    <a href="{{route('vehiculo.historial_local', $item->codigo)}}" type="button" class="btn btn-sm text-white" style="background-color: rgb(31, 58, 215) ">Historial</a>
+                                                </td>    
                                             </tr>  
 
                                             @include('Vehiculo/ModalVerVehiculo')
@@ -301,6 +309,8 @@
                                                 <td style="background-color: rgba(242, 244, 203, 0.5)">{{$item->fecha_rt_gases}}</td>
                                                 <td style="background-color: rgba(242, 244, 203, 0.5)">{{$item->fecha_permiso_circulacion_seguro}}</td>
                                                 <td style="background-color: rgba(242, 244, 203, 0.5)">
+                                                    <a href="{{route('vehiculo.historial_local', $item->codigo)}}" type="button" class="btn btn-sm text-white" style="background-color: rgb(31, 58, 215) ">Historial</a>
+                                                </td>    
                                             </tr>  
 
                                             @include('Vehiculo/ModalVerVehiculo')

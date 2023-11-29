@@ -17,8 +17,8 @@
         </a>
         <h2 class="nombre empresa">Mol Ambiente App</h2>
         <nav>
-            <h6 >Tipo de cuenta:</h6>
-            <h6 >Faena:</h6>
+            <h6 >Tipo de cuenta: Planificador</h6>
+            <h6 >Faena: Santiago</h6>
             <form style="display: inline" action="/logout" method="POST">
                 @csrf
                 <a href="#" class="btn btn-danger"

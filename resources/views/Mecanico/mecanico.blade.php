@@ -16,7 +16,7 @@
         </a>
         <h2 class="nombre empresa">Mol Ambiente App</h2>
         <nav>
-            <h6>Tipo de cuenta: </h6>
+            <h6>Tipo de cuenta: {{$cargo}}</h6>
             <h6>Faena: P11</h6>
             <form style="display: inline" action="/logout" method="POST">
                 @csrf
@@ -132,9 +132,10 @@
                                                 </td>
                                                 <td style="background-color: rgba(242, 244, 203, 0.5)">
                                                     <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#finalizar{{$item->id_tarea}}">Finalizar</button>
+                                                    <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#Deshabilitar{{$item->id_tarea}}">Deshabilitar</button>
                                                 </td>
                                             </tr>
-        
+                                            @include('Mecanico/ModalDesabilitar')
                                             <!--Modal para visualizar tarea-->
                                             @include('Mecanico/ModalVisualizacionTarea') 
 
